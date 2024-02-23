@@ -1,0 +1,21 @@
+pipeline
+	{
+	agent any
+		stages
+			{
+			stage("git")
+				{
+				steps
+					{
+					git "https://github.com/vajeedgithub/Vajeed_test.git"
+					}
+			stage("run")
+			{
+				steps
+				{
+				sh demo java.java
+				sh python main.py
+				}
+			}
+		}
+	}
